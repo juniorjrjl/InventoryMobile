@@ -2,7 +2,9 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace InventoryMobile.ViewModels;
 
-public class BaseViewModel : ObservableObject
+public partial class BaseViewModel : ObservableObject
 {
+    [ObservableProperty]
+    bool isBusy;
     
 }

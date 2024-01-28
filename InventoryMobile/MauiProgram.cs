@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using InventoryMobile.Repositories.Login;
+using InventoryMobile.Repositories.Product;
 using InventoryMobile.Repositories.Signup;
 using InventoryMobile.ViewModels;
 using InventoryMobile.Views;
@@ -23,14 +24,17 @@ public static class MauiProgram
 		
 		builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 		builder.Services.AddScoped<ISignupRepository, SignupRepository>();
+		builder.Services.AddScoped<IProductRepository, ProductRespository>();
 
 		builder.Services.AddTransient<MainViewModel>();
 		builder.Services.AddTransient<LoginViewModel>();
 		builder.Services.AddTransient<SignupViewModel>();
+		builder.Services.AddTransient<ProductsViewModel>();
 
 		builder.Services.AddTransient<MainPage>();
 		builder.Services.AddTransient<LoginPage>();
 		builder.Services.AddTransient<SignupPage>();
+		builder.Services.AddTransient<ProductsPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
