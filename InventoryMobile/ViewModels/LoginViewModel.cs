@@ -46,6 +46,7 @@ public partial class LoginViewModel : BaseViewModel
         {
             var toast = Toast.Make("Falha ao realizar login, tente novamente!", CommunityToolkit.Maui.Core.ToastDuration.Long);
             await toast.Show();
+            return;
         }
 
         Preferences.Set("token", response.AccessToken);

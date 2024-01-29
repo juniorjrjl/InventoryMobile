@@ -11,6 +11,7 @@ public class LoginRepository : ILoginRepository
     public async Task<LoginResponse> LoginAsync(LoginRequest request)
     {
         var response = await Constants.ApiUrl.AppendPathSegment("/users/login").PutJsonAsync(request);
+        
         var emptyResponse = new LoginResponse("");
         if (!response.ResponseMessage.IsSuccessStatusCode) return emptyResponse;
 

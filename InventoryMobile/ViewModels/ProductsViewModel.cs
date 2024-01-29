@@ -23,7 +23,7 @@ namespace InventoryMobile.ViewModels
             foreach(var product in products){
                 Products.Add(product);
             }
-            IsBusy = true;
+            IsBusy = false;
         }
 
     }
