@@ -1,6 +1,8 @@
 using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.Input;
 using InventoryMobile.Models.Response;
 using InventoryMobile.Repositories.Product;
+using InventoryMobile.Views;
 
 namespace InventoryMobile.ViewModels
 {
@@ -8,7 +10,7 @@ namespace InventoryMobile.ViewModels
     {
         private readonly IProductRepository _repositorty;
 
-        public ObservableCollection<ProductResponse> Products { get; set; } = new ObservableCollection<ProductResponse>();
+        public ObservableCollection<ProductResponse> Products { get; set; } = [];
 
         public ProductsViewModel(IProductRepository repository)
         {
@@ -25,6 +27,9 @@ namespace InventoryMobile.ViewModels
             }
             IsBusy = false;
         }
+
+    [RelayCommand]
+    public async Task GoToAddProduct() => await Shell.Current.GoToAsync(nameof(AddProductPage));
 
     }
 }

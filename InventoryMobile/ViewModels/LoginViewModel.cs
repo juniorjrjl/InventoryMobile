@@ -1,5 +1,6 @@
 using System.Text;
 using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using InventoryMobile.Contracts;
@@ -25,7 +26,7 @@ public partial class LoginViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task GotoSignup() => await Shell.Current.GoToAsync(nameof(SignupPage));
+    public async Task GoToSignup() => await Shell.Current.GoToAsync(nameof(SignupPage));
 
     [RelayCommand]
     public async Task Login(){
@@ -44,7 +45,7 @@ public partial class LoginViewModel : BaseViewModel
 
         if(response is null || string.IsNullOrEmpty(response.AccessToken))
         {
-            var toast = Toast.Make("Falha ao realizar login, tente novamente!", CommunityToolkit.Maui.Core.ToastDuration.Long);
+            var toast = Toast.Make("Falha ao realizar login, tente novamente!", ToastDuration.Long);
             await toast.Show();
             return;
         }

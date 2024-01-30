@@ -59,7 +59,7 @@
           </Grid>
           <Label Text="Cadastre-se agora" FontSize="Medium" HorizontalOptions="Center" TextColor="Black">
             <Label.GestureRecognizers>
-              <TapGestureRecognizer Command="{Binding GotoSignupCommand}" NumberOfTapsRequired="1"/>
+              <TapGestureRecognizer Command="{Binding GoToSignupCommand}" NumberOfTapsRequired="1"/>
             </Label.GestureRecognizers>
           </Label>
 

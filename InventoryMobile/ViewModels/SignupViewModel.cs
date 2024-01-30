@@ -1,5 +1,6 @@
 using System.Text;
 using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using InventoryMobile.Contracts;
@@ -51,14 +52,14 @@ public partial class SignupViewModel : BaseViewModel
 
         if (result) 
         {
-            var toast = Toast.Make("Usuário cadastrado com sucesso", CommunityToolkit.Maui.Core.ToastDuration.Long);
+            var toast = Toast.Make("Usuário cadastrado com sucesso", ToastDuration.Long);
             await toast.Show();
 
             await Shell.Current.GoToAsync("..");
         }
         else
         {
-            var toast = Toast.Make("Erro ao cadastrar o usuário", CommunityToolkit.Maui.Core.ToastDuration.Long);
+            var toast = Toast.Make("Erro ao cadastrar o usuário", ToastDuration.Long);
             await toast.Show();
         }
 
