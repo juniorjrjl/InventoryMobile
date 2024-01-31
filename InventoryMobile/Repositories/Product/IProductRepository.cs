@@ -5,6 +5,9 @@ namespace InventoryMobile.Repositories.Product;
 
 public interface IProductRepository
 {
+
+    Task<ProductResponse> GetByBarcodeAsync(string barcode);
+
     Task<IEnumerable<ProductResponse>> GetAsync();
 
     Task<bool> AddAsync(ProductRequest request);

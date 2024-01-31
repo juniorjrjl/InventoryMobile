@@ -56,6 +56,12 @@
                             Grid.ColumnSpan="2"
                             HeightRequest="1" />
 
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:ProductsViewModel}}, Path=GoToEditCommand}" 
+                                CommandParameter="{Binding .}" 
+                                NumberOfTapsRequired="1"/>
+                        </Grid.GestureRecognizers>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

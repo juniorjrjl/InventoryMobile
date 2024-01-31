@@ -22,4 +22,14 @@
         </Tab>
     </FlyoutItem>
 
+    <FlyoutItem Title="Controle Inventário">
+        <Tab>
+            <ShellContent
+                Title="Controle Inventário"
+                ContentTemplate="{DataTemplate views:EditProductPage}"
+                Route="EditProductPage" 
+                Shell.NavBarIsVisible="True" />
+        </Tab>
+    </FlyoutItem>
+
 </Shell>

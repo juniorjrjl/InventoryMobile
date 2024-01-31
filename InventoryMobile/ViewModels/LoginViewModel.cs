@@ -4,6 +4,7 @@ using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using InventoryMobile.Contracts;
+using InventoryMobile.Helpers;
 using InventoryMobile.Models.Request;
 using InventoryMobile.Repositories.Login;
 using InventoryMobile.Views;
@@ -50,7 +51,7 @@ public partial class LoginViewModel : BaseViewModel
             return;
         }
 
-        Preferences.Set("token", response.AccessToken);
+        SessionHelper.SaveToken(response.AccessToken, DateTime.Now.AddHours(3));
         await Shell.Current.GoToAsync($"//{nameof(ProductsPage)}");
     }
 
